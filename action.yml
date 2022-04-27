@@ -1,0 +1,5 @@
+name: everyone.app
+description: "Maintains a team with all your organization members"
+runs:
+  using: "node12"
+  main: "dist/index.js"

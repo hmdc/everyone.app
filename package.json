@@ -14,13 +14,16 @@
     "probot-app"
   ],
   "scripts": {
+    "build-action": "npx ncc build index-action.js -o dist",
     "start": "probot run ./index.js",
     "test": "jest"
   },
   "dependencies": {
+    "@probot/adapter-github-actions": "^3.1.1",
     "probot": "^10.9.3"
   },
   "devDependencies": {
+    "@vercel/ncc": "^0.33.4",
     "jest": "^26.4.0",
     "nock": "^13.0.4",
     "smee-client": "^1.1.0"

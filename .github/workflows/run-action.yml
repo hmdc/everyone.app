@@ -1,0 +1,19 @@
+name: Update everyone team
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: npm
+          node-version: 12
+      - run: npm ci
+      - run: npm run build-action
+      - uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
